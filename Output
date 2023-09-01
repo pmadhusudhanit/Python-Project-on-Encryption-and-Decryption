@@ -1,0 +1,30 @@
+SAMPLE OUTPUT: 
+
+(Output-1):
+Enter Message:madhu
+Create Secret Key To Encrypt:143
+Encrypted Successfully!
+Enter Secret Key To Decrypt:143
+Decrpyted Successfully!
+Original message: madhu
+Encrypted message: bytearray(b'\xed\xd8\xc9\xe4\xee\xc7\xda\xb2')
+Decrypted message: Madhu
+
+
+(Output-2):
+Enter Message:Good Morning
+Create Secret Key To Encrypt:123
+Encrypted Successfully!
+Enter Secret Key To Decrypt:123
+Decrpyted Successfully!
+Original message: Good Morning
+Encrypted message: bytearray(b')IB\r!895\x19H1\x0e\x1a,N\x15')
+Decrypted message: Good Morning
+
+
+(Output-3):
+Enter Message:hello
+Create Secret Key To Encrypt:111
+Encrypted Successfully!
+Enter Secret Key To Decrypt:123
+Entered Invalid Key
