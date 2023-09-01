@@ -1,0 +1,33 @@
+#Python Program To Encrypt and Decrypt Messages entered by the User
+
+import base64
+def encrypt(message, key):
+	message = message.encode('utf-8')
+	message = base64.b64encode(message)
+	encrypted_message = bytearray(len(message))
+	for i, b in enumerate(message):
+		encrypted_message[i] = b ^ key
+	return encrypted_message
+
+def decrypt(encrypted_message, key):
+	message = bytearray(len(encrypted_message))
+	for i, b in enumerate(encrypted_message):
+		message[i] = b ^ key
+	message = base64.b64decode(message)
+	message = message.decode('utf-8')
+	return message
+
+message = input("Enter Message:")
+ekey=int(input("Create Secret Key To Encrypt:"))
+encrypted_message = encrypt(message, ekey)
+print("Encrypted Successfully!")
+dkey=int(input("Enter Secret Key To Decrypt:"))
+
+if dkey==ekey:
+	decrypted_message = decrypt(encrypted_message, dkey)
+	print("Decrpyted Successfully!")
+	print(f"Original message: {message}")
+	print(f"Encrypted message: {encrypted_message}")
+	print(f"Decrypted message: {decrypted_message}")
+else:
+	print("Entered Invalid Key")
